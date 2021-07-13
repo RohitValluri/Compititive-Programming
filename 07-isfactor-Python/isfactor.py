@@ -6,4 +6,7 @@
 
 
 def fun_isfactor(f, n):
-	return False # replace with your solution
+	if (f!=0 and n%f==0) or (n==f):
+	    return True
+	else:
+		return False    # replace with your solution
