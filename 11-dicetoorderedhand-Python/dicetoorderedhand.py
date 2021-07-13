@@ -12,4 +12,6 @@
 
 def dicetoorderedhand(a, b, c):
 	# your code goes here
-	pass
+	li = [a, b, c]
+	li.sort(reverse=True) #write the ist in descending order
+	return int("".join([str(i) for i in li])) #convert each element into string, join and return it as an integer
