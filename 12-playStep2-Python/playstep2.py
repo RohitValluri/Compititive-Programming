@@ -33,6 +33,38 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
+from collections import Counter
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+    # your code goes here
+    x = [int(a) for a in str(hand)] #split the hand into a list of individual integers
+    a=list(set(x)) #remove duplicate integers
+
+    #case 1 : there are no duplicate integers
+    if len(a)==3:
+        a.sort(reverse=True) #arrange the list in descending order
+        z=str(a[0])
+        y=str(dice%100)
+        e=(z+y) # last two digits of hand are replaced by the last two digits of dice
+        x=int("".join(sorted(e, reverse=True))) #arrange the string in descending order and convert it into integer
+        #print("x",x)
+        t=dice//100 # the last two digits are sliced from the dice
+        #print("t",t)
+        c=(x,t)
+        return c
+	#case 2: there are duplicate integers	
+
+    else:
+        s=[]
+        d=Counter(x) # counter is used to find out the individual count of each integer
+        for i in d:
+            if d[i]>1:    #if count of any integer is morethan 1 then it will be stored in a seperate string          
+                string=str(i)
+                g=(string + string)
+                print("counter",g)
+                y=str(dice%10)
+                i=(g+y) #last digit of hand is replaced by the last digit of dice
+                k=int("".join(sorted(i, reverse=True)))
+                print("k",k)
+                s=dice//10
+                c=(k,s)
+                return c
