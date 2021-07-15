@@ -34,22 +34,39 @@
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
 from collections import Counter
+
+def dicetoordered(a, b, c):
+    li=[a, b, c]
+    li.sort(reverse=True)
+    return int("".join(str(i) for i in li))
+
+def handtodice(hand):
+    x=[int(i) for i in str(hand)]
+    return x
+    
+
 def playstep2(hand, dice):
     # your code goes here
-    x = [int(a) for a in str(hand)] #split the hand into a list of individual integers
+    # x = [int(a) for a in str(hand)] #split the hand into a list of individual integers
+    x=handtodice(hand)
     a=list(set(x)) #remove duplicate integers
 
     #case 1 : there are no duplicate integers
     if len(a)==3:
         a.sort(reverse=True) #arrange the list in descending order
         z=str(a[0])
-        y=str(dice%100)
+        y=str(dice%10)
+        print("y", y)
+        q=str((dice%100)//10)
+        print("q", q)
         e=(z+y) # last two digits of hand are replaced by the last two digits of dice
-        x=int("".join(sorted(e, reverse=True))) #arrange the string in descending order and convert it into integer
+        # x=int("".join(sorted(e, reverse=True))) #arrange the string in descending order and convert it into integer
+        x = dicetoordered(z, y, q)
         #print("x",x)
         t=dice//100 # the last two digits are sliced from the dice
         #print("t",t)
         c=(x,t)
+        print("c", c)
         return c
 	#case 2: there are duplicate integers	
 
@@ -64,7 +81,10 @@ def playstep2(hand, dice):
                 y=str(dice%10)
                 i=(g+y) #last digit of hand is replaced by the last digit of dice
                 k=int("".join(sorted(i, reverse=True)))
+                k=dicetoordered()
                 print("k",k)
                 s=dice//10
                 c=(k,s)
                 return c
+
+print(playstep2(413, 2312))
