@@ -1,10 +1,16 @@
 """Write a HashTable class that stores strings
 in a hash table, where keys are calculated
 using the first two letters of the string."""
+class Node:
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.next = None
 
 class HashTable(object):
     def __init__(self):
         self.table = [None]*10000
+
 
     def store(self, string):
         """Input a string that's stored in 
@@ -19,7 +25,7 @@ class HashTable(object):
         Return -1 otherwise."""
         # Your code goes here
         pass
-
+        
     def calculate_hash_value(self, string):
         """Helper function to calulate a
         hash value from a string."""
