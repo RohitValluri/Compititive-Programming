@@ -39,14 +39,16 @@ class LinkedList(object):
             return x
         else:    
             return None   
-        # pass
+        # pass 
 
 class stack(object):
     def __init__(self,top=None):
         self.ll = LinkedList(top)
+        print("stack")
 
     def push(self, new_element):
         "Push (add) a new element onto the top of the stack"
+        print("push")
         return self.ll.insert_first(new_element)
         # pass
 
@@ -54,4 +56,3 @@ class stack(object):
         "Pop (remove) the first element off the top of the stack and return it"
         return self.ll.delete_first()
         # pass
-    
