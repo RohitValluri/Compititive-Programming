@@ -14,6 +14,42 @@
 # assert(nth_happy_number(7) == 28)
 # assert(nth_happy_number(8) == 31)
 
-
 def nth_happy_number(n):
-	return 0
+
+    t = [1,7]
+    k = 0
+
+    def happynumber(n):
+        #convert negative number to positive
+        n=abs(n)
+        k = 0
+        
+        x=list(("".join((i) for i in (str(n)))))
+        if (len(x)==1):
+            if n in (t):
+                l.append(z)
+                
+        #checking for more than 9
+        else:
+            for i in range(len(x)):
+                s = int(x[i])
+                k += s*s
+                # print("a",a)
+                
+            if k==1:
+                l.append(z)
+                # print(l)
+                return z
+            else:
+                return happynumber(k)
+    # print(nth-_happy_number(23))
+    l=[]
+    i=0
+    while (len(l)!=n):
+        i+=1
+    	z=i
+	happynumber(i)
+        if len(l)==n:
+            return (l[n-1])
+
+
