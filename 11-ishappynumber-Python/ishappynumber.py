@@ -19,4 +19,25 @@
 
 def ishappynumber(n):
 	# your code goes here
-	pass
+	n=abs(n)
+	k = 0
+	x = list(("".join(i for i in str(n))))
+	# return x
+	if len(x)==1:
+		if n in range(2, 10):
+			return False
+		elif(n==0):
+			return False
+		else:		
+			return True	
+	else:
+		for i in range(len(x)):
+			s = int(x[i])
+			k += s*s
+		if k==1:
+			return True
+		else:
+			return ishappynumber(k)			
+
+# print(ishappynumber(23))	
+	
