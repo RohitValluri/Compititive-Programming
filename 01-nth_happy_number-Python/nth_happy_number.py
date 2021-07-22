@@ -17,7 +17,7 @@
 def nth_happy_number(n):
 
     t = [1,7]
-    k = 0
+    # k = 0
 
     def happynumber(n):
         #convert negative number to positive
