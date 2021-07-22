@@ -47,8 +47,8 @@ def nth_happy_number(n):
     i=0
     while (len(l)!=n):
         i+=1
-    	z=i
-	happynumber(i)
+        z=i
+        happynumber(i)
         if len(l)==n:
             return (l[n-1])
 
