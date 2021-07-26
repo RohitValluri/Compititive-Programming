@@ -104,7 +104,7 @@ class LinkedList(object):
 # print("before")
 # l.insert(6, 3)
 # l.delete(1)
-# # l.delete(2)
+# # l.delete(2)0
 # print("after")
 # l.printList()
 # l.get_position(1)
