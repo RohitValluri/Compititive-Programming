@@ -17,19 +17,19 @@
 
 def matrixadd(L, M):
 	# Your code goes here
-	# N = [len(L)][len(L[0])]
-	# if (len(L)==len(M) and len(L[0])==len(M[0])):
-	# 	for i in range(len(L)):
-	# 		for j in range(len(L[0])):
-	# 			N = L[i][j] + M[i][j]
-	# 	for x in range(len(N)):
-	# 		return x
-	# else:
-	# 	return None	
-		result = [map(sum, zip(*i)) for i in zip(L, M)]
+	if(len(L)==len(M)):
+		for i in range (len(L)):
+			if(len(L[i])==len(M[i])):
+				continue
+			else:
+				return None
+		N = [[0 for i in range(len(L[0]))] for j in range(len(L))]
+		for i in range(len(M)):
+			for j in range(len(M[0])):
+				N[i][j] = L[i][j] + M[i][j]
+		return N
 		 
-		return result
 
 
-print(matrixadd([[1,  2, 3],[4,  5,  6]], [[21, 22, 23], [24, 25, 26]]))
+# print(matrixadd([[1,  2, 3],[4,  5,  6]], [[21, 22, 23], [24, 25, 26]]))
 # print(matrixadd([[1,  2,  3],[4,  5,  6]], [[21, 22, 23], [24, 25]]))	
