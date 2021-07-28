@@ -14,42 +14,41 @@
 # assert(nth_happy_number(7) == 28)
 # assert(nth_happy_number(8) == 31)
 
+
+def ishappynumber(n): 
+	# your code goes here
+	rem = 0
+	sum = 0
+	while(n>0):
+		rem = n%10
+		sum = sum +(rem*rem)
+		n = n//10
+	# print(sum)
+	if(sum==1):
+		return True
+	elif(sum>9):
+		return ishappynumber(sum)	
+	else:
+		return False
+
 def nth_happy_number(n):
-
-    t = [1,7]
-    # k = 0
-
-    def happynumber(n):
-        #convert negative number to positive
-        n=abs(n)
-        k = 0
-        
-        x=list(("".join((i) for i in (str(n)))))
-        if (len(x)==1):
-            if n in (t):
-                l.append(z)
-                
-        #checking for more than 9
-        else:
-            for i in range(len(x)):
-                s = int(x[i])
-                k += s*s
-                # print("a",a)
-                
-            if k==1:
-                l.append(z)
-                # print(l)
-                return z
-            else:
-                return happynumber(k)
-    # print(nth-_happy_number(23))
-    l=[]
-    i=0
-    while (len(l)!=n):
-        i+=1
-        z=i
-        happynumber(i)
-        if len(l)==n:
-            return (l[n-1])
+    c = 0
+    l = 0
+    num = 1
+    while(c!=n):
+        if(ishappynumber(num) == True):
+            c+=1
+            l = num
+        num = num + 1
+    return l     
+# print(ishappynumber(7))
+# print(nthhappynumber(1))
+# print(nthhappynumber(2))
+# print(nthhappynumber(3))
+# print(nthhappynumber(4))
+# print(nthhappynumber(5))
+# print(nthhappynumber(6))
+# print(nthhappynumber(7))
+# print(nthhappynumber(8))               
 
 
