@@ -110,6 +110,8 @@ l.append(7)
 l.printList()
 # print("before")
 # l.insert(6, 3)
+l.delete(3)
+l.delete(4)
 l.delete(7)
 # # l.delete(2)0
 print("after")
