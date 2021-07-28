@@ -17,27 +17,22 @@
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
 
-def ishappynumber(n):
+def ishappynumber(n): 
 	# your code goes here
-	n=abs(n)
-	k = 0
-	x = list(("".join(i for i in str(n))))
-	# return x
-	if len(x)==1:
-		if n in range(2, 10):
-			return False
-		elif(n==0):
-			return False
-		else:		
-			return True	
+	rem = 0
+	sum = 0
+	while(n>0):
+		rem = n%10
+		sum = sum +(rem*rem)
+		n = n//10
+	print(sum)
+	if(sum==1):
+		return True
+	elif(sum>9):
+		return ishappynumber(sum)	
 	else:
-		for i in range(len(x)):
-			s = int(x[i])
-			k += s*s
-		if k==1:
-			return True
-		else:
-			return ishappynumber(k)			
+		return False		
+			
 
 # print(ishappynumber(23))	
 	
