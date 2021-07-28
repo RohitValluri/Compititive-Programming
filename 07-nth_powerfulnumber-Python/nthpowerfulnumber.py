@@ -46,14 +46,14 @@ def ispowerful(n):
 		return True
 			
 def nthpowerfulnumber(n):
-	count=1
-	num=2
-	if(n==0):
-		return 1
-	while(count<=n):
-		if(ispowerful(num)):
-			count=count+1
-		num=num+1
-	return num-1
+	x = 0
+	y =0
+	while(x <= abs(n)):
+		y +=1
+		if(ispowerful(y)):
+			x +=1
+	return y		
+
+print(nthpowerfulnumber(3))
 
 # print(powerfulnumber(int(input())))
