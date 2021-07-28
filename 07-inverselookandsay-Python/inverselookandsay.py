@@ -22,4 +22,16 @@
 
 def inverselookandsay(a):
 	# Your code goes here
-	pass
+	l = []
+	if (len(a)==0 or len(a[0])==0):
+		return l
+	else:
+		for i in range (len(a)):
+			x = a[i][0]
+			y = a[i][1]
+			for j in range(x):
+				l.append(y)
+		return l				
+	
+# print(inverselookandsay([(2,3),(1,8),(4,3)]))
+# print(inverselookandsay([(2,3),(1,8),(3,-10)]))
