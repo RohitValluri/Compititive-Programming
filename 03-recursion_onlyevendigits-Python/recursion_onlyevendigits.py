@@ -8,5 +8,33 @@
 # Also the function returns the empty list if the original list is empty. 
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
-def fun_recursion_onlyevendigits(l): 
-		return []
+def evennumberlist(l, i):
+    if len(l) == i:
+        return l
+    else:
+        a = l[i]
+        l[i] = evennum(even(a))
+        return evennumberlist(l, i + 1)
+
+def even(n, s=0):
+    if n == 0:
+        return s
+    else:
+        if (n % 10) % 2 == 0:
+            return even(n // 10, s=(s * 10) + (n % 10))
+        else:
+            return even(n // 10, s)
+
+
+def evennum(n, s=0):
+    if n == 0:
+        return s
+    else:
+        return evennum(n // 10, s=s * 10 + n % 10)
+
+
+def fun_recursion_onlyevendigits(l):
+    if len(l) == 0:
+        return []
+    else:
+        return evennumberlist(l, 0)
