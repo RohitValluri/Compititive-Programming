@@ -75,38 +75,45 @@ class LinkedList(object):
         # Your code goes here
         temp = self.head
         beforenode = None
-
-        while(temp.next and temp.value!=value):
-            beforenode = temp
-            temp=temp.next
-        if(temp.value == value):
-            if(beforenode):
+        if(temp is not None):
+            if(temp.value==value):
+                self.head = temp.next
+                temp = None
+            
+            else:    
+                while(temp.next is not None):
+                        if(temp.next.value == value and temp.next.value!=None):
+                            beforenode = temp
+                            temp=temp.next
+                            break
+                        elif(temp.next.value!=value and temp.next.value!=None):
+                            temp=temp.next
+                        
                 beforenode.next = temp.next
-            else:
-                self.head=temp.next        
+                temp=None        
        
 
-#     def printList(self):
-#         temp = self.head
-#         while (temp):
-#             print (temp.value)
-#             temp = temp.next
+    def printList(self):
+        temp = self.head
+        while (temp):
+            print (temp.value)
+            temp = temp.next
 
-# l = LinkedList()
+l = LinkedList()
 
-# l.append(3)
-# l.append(3)
-# l.append(4)
-# l.append(2)
-# l.append(2)
+l.append(3)
+l.append(4)
+l.append(5)
+l.append(6)
+l.append(7)
 # l.append(1)
-# l.printList()
+l.printList()
 # print("before")
 # l.insert(6, 3)
-# l.delete(1)
+l.delete(7)
 # # l.delete(2)0
-# print("after")
-# l.printList()
+print("after")
+l.printList()
 # l.get_position(1)
 # l.get_position(3)
 # l.get_position(4)
