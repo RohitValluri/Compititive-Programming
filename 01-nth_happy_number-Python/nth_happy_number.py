@@ -27,7 +27,9 @@ def ishappynumber(n):
 	if(sum==1):
 		return True
 	elif(sum>9):
-		return ishappynumber(sum)	
+		return ishappynumber(sum)
+	elif(sum==4):
+		return False		
 	else:
 		return False
 
