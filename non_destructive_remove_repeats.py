@@ -10,9 +10,15 @@
 
 def nondestructiveRemoveRepeats(L):
     # Your code goes here...
-    pass
+    k = list(dict.fromkeys(L))
+    return k
+    # pass
 
 assert(nondestructiveRemoveRepeats([1, 3, 5, 3, 3, 2, 1, 7, 5]) == [1, 3, 5, 2, 7])
 assert(nondestructiveRemoveRepeats([1, 5, 3, 3, 2, 1, 7, 5]) == [1, 5, 3, 2, 7])
 assert(nondestructiveRemoveRepeats([1, 2, 3, 5, 3, 3, 2, 1, 7, 5]) == [1, 2, 3, 5, 7])
 print ("All test cases passed....")
+
+# Time complexity : O(n)
+# Iterating over a list is O(n) and adding each element to the dict is O(1) 
+# so the total operation is O(n)
