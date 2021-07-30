@@ -9,9 +9,19 @@
 # functions or approaches. Hint: you may use s.count(), 
 # which could be quite handy here.
 # Hint: The time complexity can be achieved in Linear.
-
+from collections import Counter
 def areAnagrams(s1, s2):
     # Your code goes here...
-    pass
+    count1 = Counter(s1.lower())
+    count2 = Counter(s2.lower())
+    if count1 == count2:
+        return True
+    else:
+        return False
 
+assert(areAnagrams("Aba", "BAA")==True)
+assert(areAnagrams("bca", "cAb")==True)
+assert(areAnagrams("xyz", "yux")==False)
+assert(areAnagrams("Acf", "fCa")==True)            
+print("All test cases are passed!")
 # write your test cases here...
