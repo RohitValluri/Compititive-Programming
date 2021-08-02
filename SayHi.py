@@ -10,6 +10,6 @@ class SayHi(object):
         self.age = age
         print("Hi, my name is", self.name, "and I am", self.age,"years old!")
 
-d0g1 = SayHi("Dot", 4)
+dog1 = SayHi("Dot", 4)
 dog2 = SayHi("Elf", 3)      
 
