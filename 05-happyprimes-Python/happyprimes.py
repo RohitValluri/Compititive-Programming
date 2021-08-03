@@ -43,6 +43,6 @@ def ishappyprimenumber(n):
     return False    
     # pass
 
-# print(ishappynumber(833))
+print(ishappynumber(833))
 # print(isPrime(833))
     
