@@ -6,7 +6,20 @@
 # Example:
 # 	limitedPowerSet(5, 7) => 
 # [ {}, {1}, {2}, {3}, {4}, {5}, {1, 2} ]
-
+import itertools
 def limitedPowerSet(n, k):
     # Your code goes here...
-    pass
+    s=set(())
+    l=[{}]
+    for j in range(1,n+1):
+        s.add(j)
+    for j in range(1, len(s)+1):
+        x=list(map(set, itertools.combinations(s, j)))
+        for j in range (len(x)):
+            if (len(l)!=k):
+                l.append(x[j])
+            else:
+                return l
+assert(limitedPowerSet(5, 7)==[ {}, {1}, {2}, {3}, {4}, {5}, {1, 2} ])
+print("All test cases passed")
+    
