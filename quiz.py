@@ -35,8 +35,8 @@ def bestQuiz(l):
             # print("y:",y)
             maximum = max(y)
             # print("result:",y.index(maximum))
-            return  y.index(maximum)            
-      # pass
+            return y.index(maximum)            
+      pass
 # print(bestQuiz([ [ 88,  80, 91 ],
 #           [ 68, 100, -1 ]]))
 # print(bestQuiz([ [ 88,  80, 80 ],
