@@ -18,7 +18,7 @@ def bestQuiz(l):
       y =[]
       li = list(set(l[0]))
       li1 = list(set(l[1]))
-      if(li==li1):
+      if(li==li1==[-1]):
             return None
       else:
             for i in range(len(l)):
