@@ -9,12 +9,12 @@
 import itertools
 def limitedPowerSet(n, k):
     # Your code goes here...
-    s=set(())
-    l=[{}]
+    a = set()
+    l = [{}]
     for j in range(1,n+1):
-        s.add(j)
-    for j in range(1, len(s)+1):
-        x=list(map(set, itertools.combinations(s, j)))
+        a.add(j)
+    for j in range(1, len(a)+1):
+        x = list(map(set, itertools.combinations(a, j)))
         for j in range (len(x)):
             if (len(l)!=k):
                 l.append(x[j])
