@@ -16,7 +16,49 @@
 
 def topScorer(data):
     # Your code goes here...
-    return ""
+    if data=='':
+        return None
+    else:
+        l=[]
+        l1=[]
+        x = data.splitlines()
+        # print ("x:",x)
+        for j in x:
+            # print("j:",j)
+            y = j.split(',')
+            # print("ybefore",y)
+            s = 0
+            k={}
+            k = y.pop(0)
+            # print("k:", k)
+            l.append(k)
+            # print("l:",l)
+            # print("yafter:",y)
+            for x in y:
+                s+=int(x)
+            l1.append(s)
+            # print("s:",s)
+            # print("l1:",l1)
+        s1=set(l1)
+        # s2=set(l1)    
+        if(len(s1)==1):
+            return str(','.join(l))
+        else:    
+            res = {}
+            for key in l:
+                for value in l1:
+                    res[key] = value
+                    l1.remove(value)
+                    break
+            # print(str(res))
+            return (max(res, key=res.get))       
+    
+    # return ""
+
+# print(topScorer('''\
+# Fred,11,20,30 
+# Wilma,10,20,30,1
+# '''))    
 
 data = '''\
 Fred,10,20,30,40
