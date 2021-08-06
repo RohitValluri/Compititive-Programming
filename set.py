@@ -20,6 +20,7 @@ def limitedPowerSet(n, k):
                 l.append(x[j])
             else:
                 return l
+# print(limitedPowerSet(5, 7))
 assert(limitedPowerSet(5, 7)==[ {}, {1}, {2}, {3}, {4}, {5}, {1, 2} ])
 print("All test cases passed")
     
